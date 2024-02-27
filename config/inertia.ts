@@ -7,6 +7,14 @@ export default defineConfig({
   rootView: 'app_root',
 
   /**
+   * Options to configure SSR
+   */
+  ssr: {
+    enabled: true,
+    entrypoint: 'resources/ssr.tsx',
+  },
+
+  /**
    * Data that should be shared with all rendered pages
    */
   sharedData: {

@@ -3,6 +3,7 @@ import adonisjs from '@adonisjs/vite/client'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'node:path'
 import { getDirname } from '@adonisjs/core/helpers'
+import inertia from '@adonisjs/inertia/client'
 
 export default defineConfig({
   plugins: [
@@ -19,6 +20,12 @@ export default defineConfig({
       reload: ['resources/views/**/*.edge'],
     }),
     react(),
+    inertia({
+      ssr: {
+        enabled: true,
+        entrypoint: 'resources/ssr.tsx',
+      },
+    }),
   ],
   resolve: {
     alias: {
